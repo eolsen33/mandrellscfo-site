@@ -361,9 +361,19 @@ p {
 .menu-btn.open span:nth-child(2) { transform: translateY(-4px) rotate(-45deg); }
 
 @media (max-width: 880px) {
+  /* backdrop-filter on .nav makes it a containing block for fixed children,
+     which collapses .nav-links into the 72px nav. Disable on mobile so the
+     slide-down panel positions against the viewport. */
+  .nav,
+  .nav.scrolled {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    background: #fff;
+  }
   .nav-links {
     position: fixed;
     inset: 72px 0 0 0;
+    z-index: 60;
     background: #fff;
     flex-direction: column;
     gap: 0;
@@ -372,6 +382,7 @@ p {
     transform: translateY(-110%);
     transition: transform 0.4s var(--ease);
     align-items: flex-start;
+    overflow-y: auto;
   }
   .nav-links.open {
     transform: translateY(0);
