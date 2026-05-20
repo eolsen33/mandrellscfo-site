@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Begin Your Intake — Mandrell's CFO Services</title>
+  <meta name="description" content="A secure, ten-minute intake. Tell us about your business so we can determine fit and prepare for a call." />
+  <meta name="robots" content="noindex,follow" />
+  <meta name="theme-color" content="#0e1612" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,300..700,0..100,0..1&family=DM+Sans:opsz,wght@9..40,300..600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231f3d2b'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='Georgia,serif' font-size='18' fill='%23fff'%3EM%3C/text%3E%3C/svg%3E" />
+</head>
+<body class="intake-page">
+
+<!-- NAV -->
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="brand" aria-label="Mandrell's CFO Services — Home">
+      <span class="mark">M</span>
+      <span class="name">Mandrell's<em>CFO</em></span>
+    </a>
+    <nav class="nav-links" id="navLinks" aria-label="Primary">
+      <a href="index.html#services">Services</a>
+      <a href="index.html#firm">The Firm</a>
+      <a href="index.html#team">Team</a>
+      <a class="nav-cta" href="index.html">← Back to site</a>
+    </nav>
+    <button class="menu-btn" id="menuBtn" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- INTAKE HERO -->
+<section class="intake-hero">
+  <div class="wrap">
+    <div class="eyebrow"><span class="dot"></span>Client Intake · Confidential</div>
+    <h1>Tell us about<br/><em>your business.</em></h1>
+    <p class="lead">
+      A ten-minute intake — the same questions we'd ask on a first call. The more you can share, the sharper the conversation will be when we connect.
+    </p>
+    <div class="intake-meta">
+      <span>~10 minutes</span>
+      <span>Confidential</span>
+      <span>Reviewed by Christina or Shane</span>
+    </div>
+  </div>
+</section>
+
+<!-- INTAKE FORM -->
+<section class="intake-form-wrap">
+  <div class="wrap">
+
+    <!-- Success state (revealed after submit) -->
+    <div class="success-card" id="successCard" aria-live="polite">
+      <div class="check-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+      </div>
+      <h2>Thank you — your intake is in.</h2>
+      <p>
+        Christina or Shane will personally review your responses and respond within two business days. If we're a fit, we'll propose a time to talk.
+      </p>
+      <p style="margin-top:24px;font-family:var(--mono);font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted)">
+        Mandrell's CFO Services · Gainesville, FL
+      </p>
+    </div>
+
+    <div class="intake-grid" id="intakeGrid">
+
+      <!-- ASIDE -->
+      <aside class="intake-aside">
+        <div class="aside-card">
+          <h3>What happens next.</h3>
+          <ul class="what-next">
+            <li><span class="n">01</span> <span>Christina or Shane personally reviews your intake — usually within two business days.</span></li>
+            <li><span class="n">02</span> <span>If we look like a fit, we'll send proposed times for a 30-minute discovery call.</span></li>
+            <li><span class="n">03</span> <span>If we're not a fit, we'll tell you — and where possible, point you to someone who is.</span></li>
+          </ul>
+          <div class="secured">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            Submitted directly · Never sold or shared
+          </div>
+        </div>
+
+        <div class="aside-card">
+          <h3>Prefer to talk first?</h3>
+          <p>If you'd rather start with a call, ring the office and ask for Christina or Shane.</p>
+          <p style="margin-top:18px;font-family:var(--serif);font-size:22px;color:var(--ink);font-variation-settings:'opsz' 36, 'SOFT' 25"><a href="tel:13522480518" style="border-bottom:1px solid var(--rule)">(352) 248-0518</a></p>
+        </div>
+      </aside>
+
+      <!-- FORM -->
+      <form id="intakeForm" class="intake-form" novalidate
+            action="https://formsubmit.co/ajax/cfo@mandrells.com" method="POST">
+
+        <!-- Formsubmit configuration -->
+        <input type="hidden" name="_subject" value="New Client Intake — Mandrell's CFO" />
+        <input type="hidden" name="_template" value="table" />
+        <input type="hidden" name="_captcha" value="false" />
+
+        <!-- Honeypot: hidden field that bots will fill -->
+        <div class="honeypot" aria-hidden="true">
+          <label for="company_url">Leave blank</label>
+          <input type="text" id="company_url" name="company_url" tabindex="-1" autocomplete="off" />
+        </div>
+
+        <!-- 01. Who you are -->
+        <fieldset class="fieldset">
+          <legend><strong>01</strong> Who you are</legend>
+
+          <div class="field-row">
+            <div class="field">
+              <label for="firstName">First name <span class="req">*</span></label>
+              <input type="text" id="firstName" name="first_name" required autocomplete="given-name" />
+            </div>
+            <div class="field">
+              <label for="lastName">Last name <span class="req">*</span></label>
+              <input type="text" id="lastName" name="last_name" required autocomplete="family-name" />
+            </div>
+          </div>
+
+          <div class="field-row">
+            <div class="field">
+              <label for="role">Your role <span class="req">*</span></label>
+              <input type="text" id="role" name="role" required placeholder="Owner, President, CEO, etc." />
+            </div>
+            <div class="field">
+              <label for="company">Company name <span class="req">*</span></label>
+              <input type="text" id="company" name="company" required autocomplete="organization" />
+            </div>
+          </div>
+
+          <div class="field-row">
+            <div class="field">
+              <label for="email">Email <span class="req">*</span></label>
+              <input type="email" id="email" name="email" required autocomplete="email" />
+            </div>
+            <div class="field">
+              <label for="phone">Phone <span class="req">*</span></label>
+              <input type="tel" id="phone" name="phone" required autocomplete="tel" placeholder="(555) 555-5555" />
+            </div>
+          </div>
+        </fieldset>
+
+        <!-- 02. About the business -->
+        <fieldset class="fieldset">
+          <legend><strong>02</strong> About the business</legend>
+
+          <div class="field-row">
+            <div class="field">
+              <label for="industry">Industry <span class="req">*</span></label>
+              <select id="industry" name="industry" required>
+                <option value="">Select an industry</option>
+                <option>Generator Sales & Rental</option>
+                <option>Building Services / Trades</option>
+                <option>Specialty Contractor</option>
+                <option>Equipment Dealer</option>
+                <option>Professional Services</option>
+                <option>Retail / E-commerce</option>
+                <option>Manufacturing</option>
+                <option>Hospitality</option>
+                <option>Other (describe below)</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="revenue">Annual revenue range <span class="req">*</span></label>
+              <select id="revenue" name="revenue" required>
+                <option value="">Select a range</option>
+                <option>Under $500K</option>
+                <option>$500K – $1M</option>
+                <option>$1M – $5M</option>
+                <option>$5M – $10M</option>
+                <option>$10M – $30M</option>
+                <option>Over $30M</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="field-row">
+            <div class="field">
+              <label for="employees">Headcount</label>
+              <select id="employees" name="employees">
+                <option value="">Select</option>
+                <option>1–5</option>
+                <option>6–15</option>
+                <option>16–50</option>
+                <option>51–100</option>
+                <option>100+</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="state">State of operation <span class="req">*</span></label>
+              <input type="text" id="state" name="state" required placeholder="Florida" />
+            </div>
+          </div>
+
+          <div class="field cols-1">
+            <label for="entities">Entities & states</label>
+            <input type="text" id="entities" name="entities" placeholder="e.g., one LLC, Florida only — or three entities across FL, GA, AL" />
+            <span class="hint">Helpful context. If it's complicated, just write a sentence or two.</span>
+          </div>
+        </fieldset>
+
+        <!-- 03. Current setup -->
+        <fieldset class="fieldset">
+          <legend><strong>03</strong> Current accounting setup</legend>
+
+          <div class="field cols-1">
+            <label>Who handles your books today? <span class="req">*</span></label>
+            <div class="radio-group">
+              <label class="radio">
+                <input type="radio" name="current_setup" value="In-house bookkeeper" required />
+                <span class="dot"></span>
+                <span>An in-house bookkeeper or accountant</span>
+              </label>
+              <label class="radio">
+                <input type="radio" name="current_setup" value="Outsourced firm" />
+                <span class="dot"></span>
+                <span>An outsourced firm / contractor</span>
+              </label>
+              <label class="radio">
+                <input type="radio" name="current_setup" value="Owner does it" />
+                <span class="dot"></span>
+                <span>The owner does it (or a family member)</span>
+              </label>
+              <label class="radio">
+                <input type="radio" name="current_setup" value="Mix" />
+                <span class="dot"></span>
+                <span>A mix — partly in-house, partly outsourced</span>
+              </label>
+              <label class="radio">
+                <input type="radio" name="current_setup" value="Behind" />
+                <span class="dot"></span>
+                <span>Honestly? Things are behind and we need a reset</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="field cols-1">
+            <label for="software">Accounting software</label>
+            <input type="text" id="software" name="software" placeholder="QuickBooks Online, Xero, Sage, NetSuite, none yet…" />
+          </div>
+        </fieldset>
+
+        <!-- 04. What you'd like us to handle -->
+        <fieldset class="fieldset">
+          <legend><strong>04</strong> What you'd like us to handle</legend>
+
+          <div class="field cols-1">
+            <label>Check anything that applies — we'll talk through scope on the call.</label>
+            <div class="check-group">
+              <label class="check"><input type="checkbox" name="services[]" value="Fractional CFO" /><span class="box"></span><span>Fractional CFO</span></label>
+              <label class="check"><input type="checkbox" name="services[]" value="Bookkeeping" /><span class="box"></span><span>Bookkeeping</span></label>
+              <label class="check"><input type="checkbox" name="services[]" value="Payroll" /><span class="box"></span><span>Payroll Processing</span></label>
+              <label class="check"><input type="checkbox" name="services[]" value="HR" /><span class="box"></span><span>Human Resources</span></label>
+              <label class="check"><input type="checkbox" name="services[]" value="Audits & Controls" /><span class="box"></span><span>Internal Audits & Controls</span></label>
+              <label class="check"><input type="checkbox" name="services[]" value="Sales Tax" /><span class="box"></span><span>Sales Tax & Filings</span></label>
+              <label class="check"><input type="checkbox" name="services[]" value="Cash Forecasting" /><span class="box"></span><span>Cash Management & Forecasting</span></label>
+              <label class="check"><input type="checkbox" name="services[]" value="Staff Training" /><span class="box"></span><span>Staff Training & Development</span></label>
+              <label class="check"><input type="checkbox" name="services[]" value="Year-end package" /><span class="box"></span><span>Year-end Package for CPA</span></label>
+              <label class="check"><input type="checkbox" name="services[]" value="Cleanup" /><span class="box"></span><span>Books Cleanup / Catch-up</span></label>
+              <label class="check"><input type="checkbox" name="services[]" value="Not sure" /><span class="box"></span><span>Not sure — help me figure it out</span></label>
+            </div>
+          </div>
+        </fieldset>
+
+        <!-- 05. What's driving this -->
+        <fieldset class="fieldset">
+          <legend><strong>05</strong> What's driving this</legend>
+
+          <div class="field cols-1">
+            <label for="pain">What's the most painful thing about your accounting right now? <span class="req">*</span></label>
+            <textarea id="pain" name="pain_point" required placeholder="A few sentences is plenty. Late closes, no visibility into cash, an audit notice, a bookkeeper who left — whatever it is."></textarea>
+          </div>
+
+          <div class="field cols-1">
+            <label for="goals">Six months from now, what would feel like a win?</label>
+            <textarea id="goals" name="goals" placeholder="Optional, but useful."></textarea>
+          </div>
+
+          <div class="field cols-1">
+            <label for="referral">How did you hear about us?</label>
+            <input type="text" id="referral" name="referral" placeholder="Referral name, search, networking event, etc." />
+          </div>
+        </fieldset>
+
+        <!-- 06. Verification -->
+        <fieldset class="fieldset">
+          <legend><strong>06</strong> One quick check</legend>
+
+          <div class="verify">
+            <div class="q" id="verifyQuestion">
+              In accounting, what's the abbreviation <strong>AR</strong> short for? <em style="display:block;font-family:var(--mono);font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);margin-top:6px;font-style:normal">Type the second word — "Accounts ____"</em>
+            </div>
+            <div class="field">
+              <input type="text" id="verifyAnswer" name="verify_answer" placeholder="Your answer" autocomplete="off" data-verify="receivable" />
+            </div>
+          </div>
+          <span class="hint" style="font-size:12px;color:var(--muted)">This is here to keep the spam out of Christina's inbox — sorry for the small hoop.</span>
+        </fieldset>
+
+        <!-- Submit -->
+        <div class="form-foot">
+          <p>By submitting, you agree to be contacted about your inquiry. We don't sell, share, or rent your information.</p>
+          <button type="submit" class="btn-submit" id="submitBtn" disabled>
+            Submit intake <span class="arrow">→</span>
+          </button>
+        </div>
+
+        <div class="form-status" id="formStatus" role="status"></div>
+
+      </form>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER (lite) -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-bottom" style="padding-top:0;border:0">
+      <span>© <span id="year">2026</span> Mandrell's CFO Services, LLC</span>
+      <span>Gainesville, Florida · cfo@mandrells.com</span>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
