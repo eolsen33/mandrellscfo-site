@@ -1045,6 +1045,31 @@ p {
   gap: 12px;
 }
 
+a.team-member,
+a.founder,
+a.about-photo {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+a.team-member {
+  transition: transform 0.4s var(--ease);
+}
+
+a.team-member:hover .team-name {
+  color: var(--accent);
+}
+
+a.team-member:hover .team-photo {
+  border-color: var(--accent);
+}
+
+a.founder:hover .founder-name,
+a.about-photo:hover .name {
+  color: var(--accent);
+}
+
 .team-photo {
   aspect-ratio: 4 / 5;
   background: var(--bg-warm);
@@ -1985,6 +2010,221 @@ p {
 ::selection {
   background: var(--accent);
   color: #fff;
+}
+
+/* ===================================================
+   Team member bio pages (team/*.html)
+   =================================================== */
+
+.bio-top {
+  padding-top: clamp(110px, 12vw, 160px);
+  padding-bottom: clamp(60px, 8vw, 120px);
+}
+
+.back-link {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 48px;
+  transition: color 0.3s var(--ease);
+}
+
+.back-link:hover {
+  color: var(--accent);
+}
+
+.bio-hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: clamp(40px, 6vw, 88px);
+  align-items: start;
+}
+
+@media (max-width: 880px) {
+  .bio-hero-grid { grid-template-columns: 1fr; gap: 40px; }
+}
+
+.bio-portrait {
+  aspect-ratio: 4 / 5;
+  background: var(--bg-warm);
+  border-radius: 3px;
+  overflow: hidden;
+  border: 1px solid var(--rule);
+  position: relative;
+}
+
+.bio-portrait img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  filter: grayscale(0.1) contrast(1.02);
+}
+
+.bio-portrait::after {
+  content: "";
+  position: absolute;
+  inset: auto 14px 14px auto;
+  width: 36px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.bio-intro .eyebrow {
+  margin-bottom: 24px;
+}
+
+.bio-intro h1 {
+  font-size: clamp(48px, 6.5vw, 88px);
+  line-height: 0.95;
+  font-variation-settings: "opsz" 144, "SOFT" 30, "WONK" 1;
+  letter-spacing: -0.025em;
+  margin-bottom: 18px;
+}
+
+.bio-intro h1 em {
+  font-style: italic;
+  color: var(--accent);
+  font-variation-settings: "opsz" 144, "SOFT" 80, "WONK" 1;
+}
+
+.bio-role {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 500;
+  padding-bottom: 28px;
+  border-bottom: 1px solid var(--rule);
+  margin-bottom: 28px;
+}
+
+.bio-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.bio-meta .meta-row {
+  display: grid;
+  grid-template-columns: 130px 1fr;
+  gap: 18px;
+  font-size: 14px;
+  align-items: baseline;
+}
+
+.bio-meta .meta-row .k {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted-soft);
+}
+
+.bio-meta .meta-row .v {
+  font-family: var(--serif);
+  font-size: 16px;
+  line-height: 1.4;
+  color: var(--ink);
+  font-variation-settings: "opsz" 24, "SOFT" 20;
+}
+
+.bio-pull {
+  margin-top: clamp(60px, 7vw, 96px);
+  padding: clamp(28px, 4vw, 48px);
+  background: var(--bg-warm);
+  border-left: 2px solid var(--accent);
+  border-radius: 2px;
+}
+
+.bio-pull blockquote {
+  margin: 0;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(22px, 2.4vw, 30px);
+  line-height: 1.3;
+  color: var(--ink);
+  font-variation-settings: "opsz" 60, "SOFT" 80;
+  letter-spacing: -0.01em;
+}
+
+.bio-prose {
+  max-width: 64ch;
+  font-family: var(--serif);
+  font-size: clamp(18px, 1.6vw, 21px);
+  line-height: 1.65;
+  color: var(--ink-soft);
+  font-variation-settings: "opsz" 36, "SOFT" 30;
+}
+
+.bio-prose p {
+  margin: 0 0 1.2em;
+}
+
+.bio-prose p:first-of-type::first-line {
+  font-variation-settings: "opsz" 60, "SOFT" 40;
+}
+
+.bio-prose em {
+  font-style: italic;
+  color: var(--accent);
+}
+
+.bio-prose strong {
+  font-weight: 500;
+  color: var(--ink);
+}
+
+.bio-section-head {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 28px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.bio-section-head::before {
+  content: "";
+  width: 28px;
+  height: 1px;
+  background: var(--accent);
+}
+
+.bio-next {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 36px 0;
+  border-top: 1px solid var(--rule);
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.bio-next a {
+  color: var(--muted);
+  transition: color 0.3s var(--ease);
+}
+
+.bio-next a:hover {
+  color: var(--accent);
+}
+
+.bio-next .next-name {
+  color: var(--ink);
 }
 
 /* Reduced motion */
