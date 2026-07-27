@@ -18,7 +18,7 @@
   --accent-warm: #c89b54;
   --accent-warm-soft: #e9d9b8;
 
-  --serif: "Fraunces", "Times New Roman", Times, serif;
+  --serif: "DM Serif Display", "Times New Roman", Times, serif;
   --sans: "DM Sans", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
   --mono: "JetBrains Mono", "SF Mono", Menlo, Consolas, monospace;
 
@@ -94,7 +94,6 @@ h3,
 h4 {
   font-family: var(--serif);
   font-weight: 400;
-  font-variation-settings: "opsz" 144, "SOFT" 25, "WONK" 0;
   color: var(--ink);
   letter-spacing: -0.015em;
   margin: 0;
@@ -124,7 +123,6 @@ h3 {
   font-size: clamp(18px, 1.6vw, 23px);
   line-height: 1.4;
   color: var(--ink-soft);
-  font-variation-settings: "opsz" 36, "SOFT" 25;
   letter-spacing: -0.005em;
   font-weight: 400;
 }
@@ -234,7 +232,6 @@ p {
   font-family: var(--serif);
   font-size: 21px;
   letter-spacing: -0.02em;
-  font-variation-settings: "opsz" 72, "SOFT" 25;
   color: var(--ink);
 }
 
@@ -465,7 +462,6 @@ p {
 
 .hero-headline em {
   font-style: italic;
-  font-variation-settings: "opsz" 144, "SOFT" 60, "WONK" 1;
   color: var(--accent);
 }
 
@@ -493,7 +489,6 @@ p {
   font-size: clamp(18px, 1.5vw, 22px);
   line-height: 1.45;
   color: var(--ink-soft);
-  font-variation-settings: "opsz" 36, "SOFT" 35;
   max-width: 52ch;
   margin: 0 auto;
 }
@@ -625,7 +620,6 @@ p {
   font-size: 17px;
   color: var(--ink);
   line-height: 1.1;
-  font-variation-settings: "opsz" 36, "SOFT" 25;
 }
 
 .founder-role {
@@ -671,7 +665,6 @@ p {
   font-family: var(--serif);
   font-size: clamp(36px, 4vw, 54px);
   line-height: 1;
-  font-variation-settings: "opsz" 144, "SOFT" 30;
   color: var(--ink);
   letter-spacing: -0.02em;
 }
@@ -748,7 +741,6 @@ p {
   font-size: 22px;
   line-height: 1.15;
   color: var(--ink);
-  font-variation-settings: "opsz" 36, "SOFT" 25;
   letter-spacing: -0.01em;
 }
 
@@ -803,7 +795,6 @@ p {
   font-size: 24px;
   line-height: 1.1;
   color: var(--ink);
-  font-variation-settings: "opsz" 36, "SOFT" 25;
 }
 
 .cycle ul {
@@ -882,7 +873,6 @@ p {
   font-size: 21px;
   line-height: 1.2;
   color: var(--ink);
-  font-variation-settings: "opsz" 36, "SOFT" 25;
   display: flex;
   align-items: baseline;
   gap: 14px;
@@ -925,7 +915,6 @@ p {
   font-size: 17px;
   line-height: 1.5;
   color: var(--ink-soft);
-  font-variation-settings: "opsz" 36, "SOFT" 35;
   position: relative;
 }
 
@@ -991,7 +980,6 @@ p {
   font-family: var(--serif);
   font-size: 16px;
   line-height: 1.1;
-  font-variation-settings: "opsz" 36, "SOFT" 25;
 }
 
 .about-photo .photo-label .role {
@@ -1012,7 +1000,6 @@ p {
   font-size: clamp(17px, 1.35vw, 20px);
   line-height: 1.5;
   color: var(--ink-soft);
-  font-variation-settings: "opsz" 36, "SOFT" 35;
   letter-spacing: -0.005em;
 }
 
@@ -1109,7 +1096,6 @@ a.about-photo:hover .name {
   font-size: 16px;
   line-height: 1.1;
   color: var(--ink);
-  font-variation-settings: "opsz" 36, "SOFT" 25;
 }
 
 .team-role {
@@ -1174,7 +1160,6 @@ a.about-photo:hover .name {
   font-size: clamp(28px, 4vw, 48px);
   line-height: 1.15;
   color: var(--ink);
-  font-variation-settings: "opsz" 144, "SOFT" 50, "WONK" 1;
   letter-spacing: -0.015em;
 }
 
@@ -1227,13 +1212,11 @@ a.about-photo:hover .name {
 .cta-band h2 {
   color: #fff;
   font-size: clamp(38px, 5.5vw, 72px);
-  font-variation-settings: "opsz" 144, "SOFT" 30, "WONK" 0;
 }
 
 .cta-band h2 em {
   font-style: italic;
   color: var(--accent-warm);
-  font-variation-settings: "opsz" 144, "SOFT" 60, "WONK" 1;
 }
 
 .cta-band p {
@@ -1241,7 +1224,6 @@ a.about-photo:hover .name {
   font-size: 19px;
   line-height: 1.45;
   color: rgba(255, 255, 255, 0.75);
-  font-variation-settings: "opsz" 36, "SOFT" 30;
   max-width: 38ch;
 }
 
@@ -1294,7 +1276,6 @@ a.about-photo:hover .name {
   font-size: 19px;
   line-height: 1.2;
   color: #fff;
-  font-variation-settings: "opsz" 36, "SOFT" 25;
 }
 
 .cta-aside .detail .v a {
@@ -1454,7 +1435,6 @@ a.about-photo:hover .name {
 .intake-hero h1 em {
   font-style: italic;
   color: var(--accent);
-  font-variation-settings: "opsz" 144, "SOFT" 60, "WONK" 1;
 }
 
 .intake-hero .lead {
@@ -1857,14 +1837,12 @@ a.about-photo:hover .name {
   font-size: 18px;
   color: var(--ink);
   line-height: 1.3;
-  font-variation-settings: "opsz" 36, "SOFT" 25;
 }
 
 .verify .q strong {
   font-weight: 400;
   color: var(--accent);
   font-style: italic;
-  font-variation-settings: "opsz" 36, "SOFT" 60, "WONK" 1;
 }
 
 .verify input {
@@ -1979,7 +1957,6 @@ a.about-photo:hover .name {
   font-size: 18px;
   line-height: 1.5;
   color: var(--ink-soft);
-  font-variation-settings: "opsz" 36, "SOFT" 30;
   max-width: 40ch;
   margin: 0 auto;
 }
@@ -2054,14 +2031,12 @@ a.about-photo:hover .name {
   line-height: 0.95;
   letter-spacing: -0.025em;
   margin-bottom: clamp(32px, 4vw, 48px);
-  font-variation-settings: "opsz" 144, "SOFT" 30, "WONK" 1;
   max-width: 18ch;
 }
 
 .bio-name em {
   font-style: italic;
   color: var(--accent);
-  font-variation-settings: "opsz" 144, "SOFT" 80, "WONK" 1;
 }
 
 .bio-body {
@@ -2069,7 +2044,6 @@ a.about-photo:hover .name {
   font-size: clamp(18px, 1.55vw, 21px);
   line-height: 1.65;
   color: var(--ink-soft);
-  font-variation-settings: "opsz" 36, "SOFT" 30;
 }
 
 .bio-body::after {
@@ -2163,7 +2137,6 @@ a.about-photo:hover .name {
 .bio-intro h1 {
   font-size: clamp(48px, 6.5vw, 88px);
   line-height: 0.95;
-  font-variation-settings: "opsz" 144, "SOFT" 30, "WONK" 1;
   letter-spacing: -0.025em;
   margin-bottom: 18px;
 }
@@ -2171,7 +2144,6 @@ a.about-photo:hover .name {
 .bio-intro h1 em {
   font-style: italic;
   color: var(--accent);
-  font-variation-settings: "opsz" 144, "SOFT" 80, "WONK" 1;
 }
 
 .bio-role {
@@ -2213,7 +2185,6 @@ a.about-photo:hover .name {
   font-size: 16px;
   line-height: 1.4;
   color: var(--ink);
-  font-variation-settings: "opsz" 24, "SOFT" 20;
 }
 
 .bio-pull {
@@ -2231,7 +2202,6 @@ a.about-photo:hover .name {
   font-size: clamp(22px, 2.4vw, 30px);
   line-height: 1.3;
   color: var(--ink);
-  font-variation-settings: "opsz" 60, "SOFT" 80;
   letter-spacing: -0.01em;
 }
 
@@ -2241,7 +2211,6 @@ a.about-photo:hover .name {
   font-size: clamp(18px, 1.6vw, 21px);
   line-height: 1.65;
   color: var(--ink-soft);
-  font-variation-settings: "opsz" 36, "SOFT" 30;
 }
 
 .bio-prose p {
@@ -2249,7 +2218,6 @@ a.about-photo:hover .name {
 }
 
 .bio-prose p:first-of-type::first-line {
-  font-variation-settings: "opsz" 60, "SOFT" 40;
 }
 
 .bio-prose em {
