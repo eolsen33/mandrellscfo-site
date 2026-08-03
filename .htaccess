@@ -5,3 +5,12 @@
     Header set Expires "0"
   </FilesMatch>
 </IfModule>
+
+# 301s from the old WordPress site's URLs (pre-cutover structure)
+<IfModule mod_alias.c>
+  RedirectMatch 301 ^/about-us/?$ /#firm
+  RedirectMatch 301 ^/services(/.*)?$ /#services
+  RedirectMatch 301 ^/sample-page(/.*)?$ /
+  RedirectMatch 301 ^/20[0-9][0-9]/.* /
+  RedirectMatch 301 ^/(category|tag|author|feed|comments|wp-content|wp-includes|wp-json|wp-admin|wp-login)(/.*)?$ /
+</IfModule>
