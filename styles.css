@@ -713,16 +713,27 @@ p {
   }
 }
 
-/* Mobile-only CTA under the hero headline */
+/* Mobile hero slide — on desktop the wrapper is transparent to the grid */
+.hero-slide {
+  display: contents;
+}
+
+.hero-slide-eyebrow,
 .hero-mobile-cta {
   display: none;
 }
 
 @media (max-width: 720px) {
-  .hero-mobile-cta {
-    display: inline-flex;
-    align-self: flex-start;
-    margin-top: 28px;
+  .hero {
+    padding-top: 20px;
+  }
+
+  .hero-meta {
+    display: none;
+  }
+
+  .hero-inner {
+    gap: 40px;
   }
 
   .hero-headline-row {
@@ -731,20 +742,46 @@ p {
     align-items: flex-start;
   }
 
-  /* Frame the headline like a slide, echoing the founders card */
-  .hero-headline {
+  /* One full-height framed slide: eyebrow, centered headline, CTA */
+  .hero-slide {
+    display: flex;
+    flex-direction: column;
     width: 100%;
-    max-width: none;
+    min-height: calc(100vh - 136px);
+    min-height: calc(100svh - 136px);
     background: var(--bg-warm);
     border: 1px solid var(--rule);
     border-radius: 4px;
-    padding: 32px 24px 34px;
-    font-size: clamp(36px, 10vw, 48px);
+    padding: 26px 24px;
+  }
+
+  .hero-slide-eyebrow {
+    display: block;
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--muted);
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .hero-headline {
+    max-width: none;
+    margin: auto 0;
+    padding: 28px 0;
+    font-size: clamp(40px, 11vw, 52px);
+  }
+
+  .hero-mobile-cta {
+    display: inline-flex;
+    justify-content: center;
+    align-self: stretch;
   }
 
   .hero-headline-row .founders-card {
     width: 100%;
-    margin-top: 40px;
+    margin-top: 0;
   }
 }
 
