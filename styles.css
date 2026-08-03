@@ -731,6 +731,17 @@ p {
     align-items: flex-start;
   }
 
+  /* Frame the headline like a slide, echoing the founders card */
+  .hero-headline {
+    width: 100%;
+    max-width: none;
+    background: var(--bg-warm);
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    padding: 32px 24px 34px;
+    font-size: clamp(36px, 10vw, 48px);
+  }
+
   .hero-headline-row .founders-card {
     width: 100%;
     margin-top: 40px;
