@@ -14,7 +14,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300..600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="styles.css?v=11" />
+  <link rel="stylesheet" href="styles.css?v=12" />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231f3d2b'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='Georgia,serif' font-size='18' fill='%23fff'%3EM%3C/text%3E%3C/svg%3E" />
 </head>
 <body>
@@ -23,7 +23,7 @@
 <header class="nav" id="nav">
   <div class="nav-inner">
     <a href="#top" class="brand" aria-label="Mandrell's CFO Services — Home">
-      <span class="mark">M</span>
+      <img class="mark-img" src="assets/mcfo-logo.png" alt="" width="40" height="40" />
       <span class="name">Mandrell's<em>CFO</em></span>
     </a>
 
@@ -43,6 +43,20 @@
 </header>
 
 <main id="top">
+
+<!-- ============ MOBILE HERO (phones only) ============ -->
+<section class="mobile-hero" aria-label="Introduction">
+  <div class="mobile-hero-media" aria-hidden="true">
+    <img src="assets/team/christina-full.jpg" alt="" loading="eager" />
+    <img src="assets/team/shane-full.png" alt="" loading="eager" />
+  </div>
+  <div class="mobile-hero-content">
+    <div class="mobile-hero-eyebrow"><span class="dot"></span>Family-owned · Gainesville, Florida</div>
+    <h1 class="mobile-hero-title">Your <em>financial business</em> is our business.</h1>
+    <p class="mobile-hero-sub">The books your business runs on — handled by a team that knows yours inside and out.</p>
+    <a class="btn mobile-hero-cta" href="intake.html">Request an intake <span class="arrow">→</span></a>
+  </div>
+</section>
 
 <!-- ============ HERO ============ -->
 <section class="section hero">
@@ -485,7 +499,7 @@
     <div class="footer-top">
       <div class="footer-brand">
         <a href="#top" class="brand">
-          <span class="mark">M</span>
+          <img class="mark-img" src="assets/mcfo-logo.png" alt="" width="40" height="40" />
           <span class="name">Mandrell's<em>CFO</em></span>
         </a>
         <p>Family-owned operational accounting and fractional CFO services. Gainesville, Florida — serving the Southeast.</p>
