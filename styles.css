@@ -713,125 +713,27 @@ p {
   }
 }
 
-/* ----------- Mobile hero (phone opening screen) ----------- */
-
-.mobile-hero {
+/* Mobile-only CTA under the hero headline */
+.hero-mobile-cta {
   display: none;
 }
 
 @media (max-width: 720px) {
-  .mobile-hero {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    min-height: calc(100vh - 72px);
-    min-height: calc(100svh - 72px);
-    background: var(--accent-deep);
-    overflow: hidden;
+  .hero-mobile-cta {
+    display: inline-flex;
+    align-self: flex-start;
+    margin-top: 28px;
   }
 
-  /* Duotone photo backdrop: grayscale founders multiplied into brand green */
-  .mobile-hero-media {
-    position: absolute;
-    inset: 0;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    background: var(--accent);
-  }
-
-  .mobile-hero-media img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center 22%;
-    filter: grayscale(1) contrast(1.05) brightness(1.08);
-    mix-blend-mode: multiply;
-  }
-
-  .mobile-hero-media::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-      180deg,
-      rgba(20, 42, 29, 0.62) 0%,
-      rgba(31, 61, 43, 0.34) 48%,
-      rgba(14, 22, 18, 0.72) 100%
-    );
-  }
-
-  .mobile-hero-content {
-    position: relative;
-    z-index: 1;
+  .hero-headline-row {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 22px;
-    padding: clamp(40px, 9vw, 64px) var(--gutter) 56px;
   }
 
-  .mobile-hero-eyebrow {
-    font-family: var(--mono);
-    font-size: 10px;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.8);
-    font-weight: 500;
-  }
-
-  .mobile-hero-eyebrow .dot {
-    display: inline-block;
-    width: 5px;
-    height: 5px;
-    background: var(--accent-warm);
-    border-radius: 50%;
-    vertical-align: middle;
-    margin: 0 10px 2px 0;
-  }
-
-  .mobile-hero-title {
-    font-size: clamp(42px, 12.5vw, 56px);
-    line-height: 1.03;
-    letter-spacing: -0.02em;
-    color: #fff;
-    max-width: 11ch;
-  }
-
-  .mobile-hero-title em {
-    font-style: italic;
-    color: var(--accent-warm);
-  }
-
-  .mobile-hero-sub {
-    margin: 0;
-    font-size: 17px;
-    line-height: 1.6;
-    color: rgba(255, 255, 255, 0.92);
-    max-width: 34ch;
-  }
-
-  .mobile-hero-cta {
-    background: #fff;
-    color: var(--accent-deep);
-    margin-top: 6px;
-  }
-
-  .mobile-hero-cta:active {
-    background: var(--accent-warm-soft);
-  }
-
-  /* The mobile hero replaces the desktop headline + meta strip on phones */
-  .hero {
-    padding-top: 48px;
-  }
-
-  .hero-meta,
-  .hero-headline {
-    display: none;
-  }
-
-  .hero-inner {
-    gap: 40px;
+  .hero-headline-row .founders-card {
+    width: 100%;
+    margin-top: 40px;
   }
 }
 
