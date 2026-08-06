@@ -187,10 +187,16 @@
       headers: { 'Accept': 'application/json' }
     })
       .then(function (res) {
-        if (res.ok) {
+        if (!res.ok) throw new Error('Network error');
+        return res.json();
+      })
+      .then(function (data) {
+        // Formsubmit returns 200 even on failure (e.g. unactivated form) —
+        // success is only real when the body says so
+        if (data && (data.success === true || data.success === 'true')) {
           showSuccess();
         } else {
-          throw new Error('Network error');
+          throw new Error('Formsubmit rejected');
         }
       })
       .catch(function () {
