@@ -1587,6 +1587,7 @@ a.about-photo:hover .name {
   padding: 28px;
 }
 
+.aside-card h2,
 .aside-card h3 {
   font-size: 22px;
   margin-bottom: 14px;
