@@ -1,4 +1,4 @@
-# Mandrell's CFO Services — https://mandrellscfo.ericolsen.studio/
+# Mandrell's CFO Services — https://mandrellscfo.com/
 # Search engines and AI assistants are welcome. Machine-readable summary: /llms.txt
 
 User-agent: *
@@ -44,4 +44,4 @@ Allow: /
 User-agent: DuckAssistBot
 Allow: /
 
-Sitemap: https://mandrellscfo.ericolsen.studio/sitemap.xml
+Sitemap: https://mandrellscfo.com/sitemap.xml
