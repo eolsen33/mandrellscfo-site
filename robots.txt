@@ -3,59 +3,45 @@
 
 User-agent: *
 Allow: /
-Disallow: /intake.html
 
 # AI crawlers — explicitly allowed (same rules as everyone else)
 User-agent: GPTBot
 Allow: /
-Disallow: /intake.html
 
 User-agent: OAI-SearchBot
 Allow: /
-Disallow: /intake.html
 
 User-agent: ChatGPT-User
 Allow: /
-Disallow: /intake.html
 
 User-agent: ClaudeBot
 Allow: /
-Disallow: /intake.html
 
 User-agent: Claude-Web
 Allow: /
-Disallow: /intake.html
 
 User-agent: anthropic-ai
 Allow: /
-Disallow: /intake.html
 
 User-agent: PerplexityBot
 Allow: /
-Disallow: /intake.html
 
 User-agent: Google-Extended
 Allow: /
-Disallow: /intake.html
 
 User-agent: Applebot-Extended
 Allow: /
-Disallow: /intake.html
 
 User-agent: CCBot
 Allow: /
-Disallow: /intake.html
 
 User-agent: meta-externalagent
 Allow: /
-Disallow: /intake.html
 
 User-agent: Amazonbot
 Allow: /
-Disallow: /intake.html
 
 User-agent: DuckAssistBot
 Allow: /
-Disallow: /intake.html
 
 Sitemap: https://mandrellscfo.ericolsen.studio/sitemap.xml
