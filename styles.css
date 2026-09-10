@@ -368,7 +368,14 @@ p {
 .menu-btn.open span:nth-child(1) { transform: translateY(4.5px) rotate(45deg); }
 .menu-btn.open span:nth-child(2) { transform: translateY(-4px) rotate(-45deg); }
 
-@media (max-width: 880px) {
+/* Seven links plus a CTA need more room than the old six did: tighten the
+   rhythm on narrow laptops, then fall back to the hamburger at 1120px. */
+@media (max-width: 1280px) and (min-width: 1121px) {
+  .nav-links { gap: 20px; }
+  .nav-links .nav-cta { padding: 13px 20px; }
+}
+
+@media (max-width: 1120px) {
   /* backdrop-filter on .nav makes it a containing block for fixed children,
      which collapses .nav-links into the 72px nav. Disable on mobile so the
      slide-down panel positions against the viewport. */
@@ -1188,6 +1195,174 @@ a.about-photo:hover .name {
   text-transform: uppercase;
   color: var(--muted);
   margin-top: 2px;
+}
+
+/* ----------- Section lead paragraph ----------- */
+.section-lead {
+  font-family: var(--serif);
+  font-size: clamp(17px, 1.35vw, 20px);
+  line-height: 1.45;
+  color: var(--ink-soft);
+  letter-spacing: -0.005em;
+  max-width: 74ch;
+  margin: -12px 0 56px;
+}
+
+@media (max-width: 720px) {
+  .section-lead {
+    font-size: 17px;
+    margin: -8px 0 40px;
+  }
+}
+
+/* ----------- Why outsource / reasons ----------- */
+.reasons {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: clamp(32px, 5vw, 72px);
+  border-top: 1px solid var(--rule);
+}
+
+.reason {
+  padding: 28px 0 30px;
+  border-bottom: 1px solid var(--rule);
+  display: grid;
+  grid-template-columns: 44px 1fr;
+  column-gap: 4px;
+  align-content: start;
+}
+
+.reason .r-num {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  color: var(--accent);
+  font-weight: 500;
+  padding-top: 7px;
+  grid-row: span 2;
+}
+
+.reason h3 {
+  font-size: 20px;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  transition: color 0.3s var(--ease);
+}
+
+.reason p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--muted);
+  margin-top: 10px;
+}
+
+.reason:hover h3 {
+  color: var(--accent);
+}
+
+.reason-cta .r-num {
+  color: var(--accent-warm);
+  font-size: 13px;
+  padding-top: 3px;
+}
+
+.reason-cta h3 {
+  color: var(--ink);
+}
+
+.reason-link {
+  display: inline-block;
+  margin-top: 14px;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  border-bottom: 1px solid var(--accent-warm-soft);
+  padding-bottom: 3px;
+  transition: border-color 0.3s var(--ease);
+}
+
+.reason-link:hover {
+  border-bottom-color: var(--accent);
+}
+
+.reason-link .arrow {
+  display: inline-block;
+  transition: transform 0.3s var(--ease);
+}
+
+.reason-link:hover .arrow {
+  transform: translateX(4px);
+}
+
+@media (max-width: 820px) {
+  .reasons { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 480px) {
+  .reason {
+    grid-template-columns: 1fr;
+    row-gap: 0;
+  }
+  .reason .r-num {
+    grid-row: auto;
+    padding-top: 0;
+    margin-bottom: 8px;
+  }
+}
+
+/* ----------- Value added ----------- */
+.values {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+.value {
+  background: var(--bg);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  padding: 26px 28px 28px;
+  transition: border-color 0.3s var(--ease), transform 0.3s var(--ease);
+}
+
+.value::before {
+  content: "\002726";
+  display: block;
+  font-family: var(--serif);
+  font-size: 14px;
+  line-height: 1;
+  color: var(--accent-warm);
+  margin-bottom: 14px;
+}
+
+.value h3 {
+  font-size: 20px;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+
+.value p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--muted);
+  margin-top: 10px;
+}
+
+.value:hover {
+  border-color: var(--accent-warm-soft);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 820px) {
+  .values { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 480px) {
+  .value { padding: 22px 22px 24px; }
 }
 
 /* ----------- Pillars ----------- */
@@ -2078,6 +2253,7 @@ a.about-photo:hover .name {
 .reveal-stagger.in > *:nth-child(6) { transition-delay: 0.3s; }
 .reveal-stagger.in > *:nth-child(7) { transition-delay: 0.35s; }
 .reveal-stagger.in > *:nth-child(8) { transition-delay: 0.4s; }
+.reveal-stagger.in > *:nth-child(n+9) { transition-delay: 0.45s; }
 
 /* Selection */
 ::selection {
