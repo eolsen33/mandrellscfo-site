@@ -16,6 +16,15 @@ RewriteRule ^ https://mandrellscfo.com%{REQUEST_URI} [R=301,L]
   </FilesMatch>
 </IfModule>
 
+# Baseline security headers (added by the 2026-09-21 weekly site check)
+<IfModule mod_headers.c>
+  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+  Header set X-Content-Type-Options "nosniff"
+  Header set X-Frame-Options "SAMEORIGIN"
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+  Header set Permissions-Policy "camera=(), microphone=(), geolocation=()"
+</IfModule>
+
 # 301s from the old WordPress site's URLs (pre-cutover structure)
 <IfModule mod_alias.c>
   RedirectMatch 301 ^/about-us/?$ /#firm
