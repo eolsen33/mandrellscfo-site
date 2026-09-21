@@ -5,6 +5,41 @@
 (function () {
   'use strict';
 
+  // Form delivery — Formsubmit today, Web3Forms once the client's key arrives.
+  const FORM = { endpoint: "https://formsubmit.co/ajax/cfo@mandrells.com", web3formsKey: "" }; // when the Web3Forms key arrives: set web3formsKey and the endpoint switches automatically
+
+  // POSTs a form as JSON. Resolves only on a confirmed delivery — Formsubmit
+  // answers 200 even when it drops a message, so the body is what counts.
+  function sendForm(form) {
+    var data = {};
+    new FormData(form).forEach(function (value, key) {
+      data[key] = key in data ? data[key] + ', ' + value : value;
+    });
+    if (data._subject) data.subject = data._subject;
+    var url = FORM.endpoint;
+    if (FORM.web3formsKey) {
+      url = 'https://api.web3forms.com/submit';
+      data.access_key = FORM.web3formsKey;
+      Object.keys(data).forEach(function (key) { if (key.charAt(0) === '_') delete data[key]; });
+    }
+    var httpOk = false;
+    return fetch(url, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify(data)
+    })
+      .then(function (res) {
+        httpOk = res.ok;
+        return res.json().catch(function () { return {}; });
+      })
+      .then(function (out) {
+        if (!httpOk || !(out.success === true || out.success === 'true')) {
+          throw new Error(out.message || 'Form submission failed');
+        }
+        return out;
+      });
+  }
+
   /* ----- Year ----- */
   document.querySelectorAll('#year').forEach(function (el) {
     el.textContent = new Date().getFullYear();
@@ -175,29 +210,15 @@
       return;
     }
 
-    // All clear — submit via AJAX to Formsubmit
+    // All clear — sendForm() confirms delivery (Formsubmit AJAX today,
+    // Web3Forms once FORM.web3formsKey is set). No JS = native POST to action=.
     submitBtn.disabled = true;
     submitBtn.innerHTML = 'Sending… <span class="arrow">→</span>';
     setStatus('Submitting your intake…', 'success');
 
-    const formData = new FormData(form);
-    fetch(form.action, {
-      method: 'POST',
-      body: formData,
-      headers: { 'Accept': 'application/json' }
-    })
-      .then(function (res) {
-        if (!res.ok) throw new Error('Network error');
-        return res.json();
-      })
-      .then(function (data) {
-        // Formsubmit returns 200 even on failure (e.g. unactivated form) —
-        // success is only real when the body says so
-        if (data && (data.success === true || data.success === 'true')) {
-          showSuccess();
-        } else {
-          throw new Error('Formsubmit rejected');
-        }
+    sendForm(form)
+      .then(function () {
+        showSuccess();
       })
       .catch(function () {
         setStatus('Something went wrong. Please email cfo@mandrells.com directly or call (352) 248-0518.', 'error');
