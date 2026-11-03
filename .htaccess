@@ -8,6 +8,14 @@ RewriteCond %{HTTP_HOST} ^mandrellscfo\.ericolsen\.studio$ [NC]
 RewriteRule ^ https://mandrellscfo.com%{REQUEST_URI} [R=301,L]
 # /seo-kit
 
+# Client preview host (preview branch): serve as-is, never index.
+<IfModule mod_setenvif.c>
+  SetEnvIfNoCase Host ^mcfo-preview\.ericolsen\.studio$ MCFO_PREVIEW=1
+</IfModule>
+<IfModule mod_headers.c>
+  Header set X-Robots-Tag "noindex, nofollow" env=MCFO_PREVIEW
+</IfModule>
+
 <IfModule mod_headers.c>
   <FilesMatch "\.(html|js|css)$">
     Header set Cache-Control "no-cache, no-store, must-revalidate"
