@@ -5,6 +5,8 @@
 (function () {
   'use strict';
 
+  document.documentElement.classList.add('js');
+
   // Form delivery — Formsubmit today, Web3Forms once the client's key arrives.
   const FORM = { endpoint: "https://formsubmit.co/ajax/cfo@mandrells.com", web3formsKey: "" }; // when the Web3Forms key arrives: set web3formsKey and the endpoint switches automatically
 
@@ -91,6 +93,58 @@
     revealTargets.forEach(function (el) { obs.observe(el); });
   } else {
     revealTargets.forEach(function (el) { el.classList.add('in'); });
+  }
+
+  /* ----- Plate heroes: photo first, then the headline -----
+     Each photographed section opens with a .plate-hero. The observer adds
+     .in once the frame is a quarter in view; CSS stages the print, then the
+     headline. An in-page link to a section that is off screen re-arms its
+     hero so the sequence plays again on arrival. */
+  const heroes = document.querySelectorAll('.plate-hero');
+  if (heroes.length) {
+    const hasIO = 'IntersectionObserver' in window;
+    const heroObs = hasIO
+      ? new IntersectionObserver(
+          function (entries) {
+            entries.forEach(function (entry) {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('in');
+                heroObs.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.25, rootMargin: '0px 0px -10% 0px' }
+        )
+      : null;
+
+    heroes.forEach(function (h) {
+      if (heroObs) heroObs.observe(h); else h.classList.add('in');
+    });
+
+    function heroFor(hash) {
+      if (!hash || hash.length < 2) return null;
+      let target = null;
+      try { target = document.querySelector(hash); } catch (e) { return null; }
+      return target ? target.querySelector('.plate-hero') : null;
+    }
+
+    function mostlyVisible(el) {
+      const r = el.getBoundingClientRect();
+      const vh = window.innerHeight || document.documentElement.clientHeight;
+      return r.top < vh * 0.6 && r.bottom > vh * 0.4;
+    }
+
+    function rearm(hero) {
+      if (!heroObs || !hero || mostlyVisible(hero)) return;
+      hero.classList.remove('in');
+      void hero.offsetWidth;
+      heroObs.observe(hero);
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(function (a) {
+      a.addEventListener('click', function () { rearm(heroFor(a.getAttribute('href'))); });
+    });
+    window.addEventListener('hashchange', function () { rearm(heroFor(location.hash)); });
   }
 
   /* =====================================================
