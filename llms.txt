@@ -30,4 +30,15 @@
 - [Sarah Bates — Assistant Controller · Mandrell's CFO Services](https://mandrellscfo.com/team/sarah.html): Sarah Bates, Assistant Controller at Mandrell's CFO Services. Florida Atlantic University BBA in Accounting.
 - [Shane Mandrell — Chief Executive Officer · Mandrell's CFO Services](https://mandrellscfo.com/team/shane.html): Shane Mandrell, CEO and co-founder of Mandrell's CFO Services. Retired Navy reservist, UF engineer, and owner-operator of Mandrell's Pressure Cleaning — five locations across Florida.
 
-Site by EricOlsen.Studio (https://www.ericolsen.studio/). Last updated 2026-09-10.
+## Services
+
+- [Fractional CFO](https://mandrellscfo.com/services/fractional-cfo.html): Fractional CFO services from a family-owned accounting firm in Gainesville, FL: budgeting and forecasting, KPI dashboards, and quarterly strategic reviews.
+- [Bookkeeping & Financial Reporting](https://mandrellscfo.com/services/bookkeeping-financial-reporting.html): Bookkeeping and financial reporting from an accounting firm in Gainesville, FL: reconciliations, AR, AP, general ledger, job costing, and a clean monthly close.
+- [Payroll Processing](https://mandrellscfo.com/services/payroll-processing.html): Payroll processing from an accounting firm in Gainesville, FL: timely, accurate pay, multi-state where required, tax deposits, returns, and garnishments.
+- [Human Resources](https://mandrellscfo.com/services/human-resources.html): Human resources support from an accounting firm in Gainesville, FL: recruiting, onboarding, compliance, benefits administration, and staff development.
+- [Controller Services & Audits](https://mandrellscfo.com/services/controller-services-audits.html): Controller services from an accounting firm in Gainesville, FL: dedicated oversight and periodic internal reviews of policies, procedures, and systems.
+- [Sales & Payroll Tax](https://mandrellscfo.com/services/sales-payroll-tax.html): Sales, use, and payroll tax returns from an accounting firm in Gainesville, FL. Florida and multi-jurisdiction, filed accurately, on time, and audit-ready.
+- [Cash Flow Forecasting](https://mandrellscfo.com/services/cash-flow-forecasting.html): Cash flow forecasting from an accounting firm in Gainesville, FL: rolling forecasts, budget creation, collection-cycle analysis, and vendor payment timing.
+- [Staff Training & Development](https://mandrellscfo.com/services/staff-training-development.html): Accounting and HR training for your in-house team from a family-owned accounting firm in Gainesville, FL. Internal advancement, not dependence.
+
+Site by EricOlsen.Studio (https://www.ericolsen.studio/). Last updated 2026-11-20.

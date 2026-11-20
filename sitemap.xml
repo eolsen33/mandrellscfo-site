@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://mandrellscfo.com/</loc>
-    <lastmod>2026-09-10</lastmod>
+    <lastmod>2026-11-20</lastmod>
   </url>
   <url>
     <loc>https://mandrellscfo.com/team/ashley.html</loc>
@@ -43,5 +43,37 @@
   <url>
     <loc>https://mandrellscfo.com/team/shane.html</loc>
     <lastmod>2026-09-05</lastmod>
+  </url>
+  <url>
+    <loc>https://mandrellscfo.com/services/fractional-cfo.html</loc>
+    <lastmod>2026-11-20</lastmod>
+  </url>
+  <url>
+    <loc>https://mandrellscfo.com/services/bookkeeping-financial-reporting.html</loc>
+    <lastmod>2026-11-20</lastmod>
+  </url>
+  <url>
+    <loc>https://mandrellscfo.com/services/payroll-processing.html</loc>
+    <lastmod>2026-11-20</lastmod>
+  </url>
+  <url>
+    <loc>https://mandrellscfo.com/services/human-resources.html</loc>
+    <lastmod>2026-11-20</lastmod>
+  </url>
+  <url>
+    <loc>https://mandrellscfo.com/services/controller-services-audits.html</loc>
+    <lastmod>2026-11-20</lastmod>
+  </url>
+  <url>
+    <loc>https://mandrellscfo.com/services/sales-payroll-tax.html</loc>
+    <lastmod>2026-11-20</lastmod>
+  </url>
+  <url>
+    <loc>https://mandrellscfo.com/services/cash-flow-forecasting.html</loc>
+    <lastmod>2026-11-20</lastmod>
+  </url>
+  <url>
+    <loc>https://mandrellscfo.com/services/staff-training-development.html</loc>
+    <lastmod>2026-11-20</lastmod>
   </url>
 </urlset>
