@@ -2955,3 +2955,119 @@ a.about-photo:hover .name {
     transition: opacity 0.5s var(--ease) 0.2s;
   }
 }
+
+
+/* ----------- Section folds -----------
+   Sections 01, 02, 03, 06 and 07 show their headline, then a ruled "Expand"
+   line; the body sits in <details class="sec-fold fold"> beneath it.
+   script.js animates the body height (and adds .is-closing while it folds
+   shut); without JS it is a plain <details>. */
+.fold > summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 16px 0;
+  -webkit-tap-highlight-color: transparent;
+}
+.fold > summary::-webkit-details-marker { display: none; }
+.fold > summary::before,
+.fold > summary::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--rule);
+  transition: background 0.3s var(--ease);
+}
+.fold > summary:hover::before,
+.fold > summary:hover::after { background: var(--accent-warm); }
+.fold > summary:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+.fold-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.fold-label::after {
+  content: "";
+  width: 8px;
+  height: 8px;
+  margin-top: -4px;
+  border-right: 1.5px solid var(--accent-warm);
+  border-bottom: 1.5px solid var(--accent-warm);
+  transform: rotate(45deg);
+  transform-origin: 65% 65%;
+  transition: transform 0.45s var(--ease);
+}
+.fold[open]:not(.is-closing) .fold-label::after { transform: rotate(-135deg); }
+.fold .when-open,
+.fold[open]:not(.is-closing) .when-closed { display: none; }
+.fold[open]:not(.is-closing) .when-open { display: inline; }
+
+.fold-body { overflow: hidden; }
+.sec-fold-inner { padding: 30px 0 4px; }
+.fold[open] .sec-fold-inner {
+  animation: fold-in 0.7s var(--ease) both;
+}
+@keyframes fold-in {
+  from { opacity: 0; transform: translateY(-10px); }
+  to   { opacity: 1; transform: none; }
+}
+
+/* 03: the lead line stays in view above the Expand line */
+.serve-lead {
+  font-size: clamp(21px, 2.2vw, 28px);
+  line-height: 1.3;
+  color: var(--ink);
+  max-width: 34ch;
+  margin: 0 0 28px;
+}
+.sec-fold .note-card { margin-top: 0; }
+.section-lead + .sec-fold { margin-top: -28px; }
+
+/* ----------- Back to top (phones) -----------
+   Injected by script.js. Shown once the reader is a screen or so down. */
+.to-top { display: none; }
+@media (max-width: 720px) {
+  .to-top {
+    display: grid;
+    place-items: center;
+    position: fixed;
+    right: 16px;
+    bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+    z-index: 40;
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 50%;
+    background: var(--accent);
+    color: #fff;
+    box-shadow: 0 6px 18px rgba(20, 30, 24, 0.22);
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(12px);
+    transition: opacity 0.35s var(--ease), transform 0.35s var(--ease), visibility 0s linear 0.35s;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .to-top.show {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    transition-delay: 0s;
+  }
+  .to-top:active { transform: scale(0.94); }
+  .to-top:focus-visible { outline: 2px solid var(--accent-warm); outline-offset: 3px; }
+  .to-top svg { width: 18px; height: 18px; }
+}

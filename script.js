@@ -95,6 +95,73 @@
     revealTargets.forEach(function (el) { el.classList.add('in'); });
   }
 
+  /* ----- Section folds: the "Expand" line eases the body open -----
+     <details class="fold"> in sections 01, 02, 03, 06 and 07. Native toggling snaps,
+     so the click is taken over: the .fold-body height is animated both ways
+     and [open] is only dropped once the body has folded shut. A click
+     mid-flight reverses from wherever the body is. Reduced motion (or no
+     Web Animations) keeps the native toggle. */
+  const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  document.querySelectorAll('details.fold').forEach(function (fold) {
+    const summary = fold.querySelector('summary');
+    const body = fold.querySelector('.fold-body');
+    if (!summary || !body || reduceMotion || !body.animate) return;
+    let anim = null;
+
+    summary.addEventListener('click', function (e) {
+      e.preventDefault();
+      const opening = !fold.open || fold.classList.contains('is-closing');
+      const from = fold.open ? body.getBoundingClientRect().height : 0;
+      if (anim) { anim.onfinish = null; anim.cancel(); }
+
+      if (opening) {
+        fold.classList.remove('is-closing');
+        fold.open = true;
+      } else {
+        fold.classList.add('is-closing');
+      }
+      const to = opening ? body.scrollHeight : 0;
+      const frames = { height: [from + 'px', to + 'px'] };
+      if (!opening) frames.opacity = [1, 0];
+
+      anim = body.animate(frames, {
+        duration: opening ? Math.min(900, 420 + to * 0.35) : Math.min(650, 320 + from * 0.25),
+        easing: 'cubic-bezier(0.22, 1, 0.36, 1)',
+        fill: opening ? 'none' : 'forwards'
+      });
+      anim.onfinish = function () {
+        if (!opening) {
+          fold.open = false;
+          fold.classList.remove('is-closing');
+        }
+        anim.cancel();
+        anim = null;
+      };
+    });
+  });
+
+  /* ----- Back to top (phones; CSS hides it above 720px) ----- */
+  (function () {
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'to-top';
+    btn.setAttribute('aria-label', 'Return to top');
+    btn.innerHTML = '<svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 15V3M3.5 8.5 9 3l5.5 5.5"/></svg>';
+    document.body.appendChild(btn);
+    let ticking = false;
+    function update() {
+      ticking = false;
+      btn.classList.toggle('show', window.scrollY > window.innerHeight * 0.9);
+    }
+    window.addEventListener('scroll', function () {
+      if (!ticking) { ticking = true; window.requestAnimationFrame(update); }
+    }, { passive: true });
+    btn.addEventListener('click', function () {
+      window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' });
+    });
+    update();
+  })();
+
   /* ----- Plate heroes: photo first, then the headline -----
      Each photographed section opens with a .plate-hero. The observer adds
      .in once the frame is a quarter in view; CSS stages the print, then the
