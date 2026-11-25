@@ -47,3 +47,13 @@ RewriteRule ^ https://mandrellscfo.com%{REQUEST_URI} [R=301,L]
 RedirectMatch 404 ^/[^/]*\.md$
 RedirectMatch 404 ^/(_build|_private|_pocketbase|tools|\.impeccable|\.git|\.github)(/|$)
 RedirectMatch 404 ^/\.(gitignore|env|DS_Store)
+
+# >>> Content-Security-Policy (OWASP header sweep 2026-11-24)
+# Built from a browser crawl of every page plus a scan of the site's own files, then re-crawled
+# to prove nothing is blocked. If you add a third-party script, font, embed, form target or API
+# host to the site, ADD IT HERE TOO or browsers will silently block it.
+# Tooling: /Volumes/External 1/DevStorage/audit-tools/csp/ (csp-probe.mjs verify ...)
+<IfModule mod_headers.c>
+  Header always set Content-Security-Policy "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data:; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://api.web3forms.com https://formsubmit.co; frame-src https://www.google.com; object-src 'none'; base-uri 'self'; form-action 'self' https://formsubmit.co; frame-ancestors 'self'; upgrade-insecure-requests"
+</IfModule>
+# <<< Content-Security-Policy
